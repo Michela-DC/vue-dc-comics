@@ -6,36 +6,9 @@
         </figure>
 
         <ul class="navbar">
-            <li>
-                <a href="">charactres</a>
+            <li v-for="(option ,i) in options" :key="i">
+                <a href="">{{option}}</a>
             </li>
-            <li>
-                <a href="">comics</a>
-            </li>
-            <li>
-                <a href="">movies</a>
-            </li>
-            <li>
-                <a href="">tv</a>
-            </li>
-            <li>
-                <a href="">games</a>
-            </li>
-            <li>
-                <a href="">collectibles</a>
-            </li>
-            <li>
-                <a href="">videos</a>
-            </li>
-            <li>
-                <a href="">fans</a>
-            </li>
-            <li>
-                <a href="">news</a>
-            </li>
-            <li>
-                <a href="">shop</a>
-            </li> 
         </ul>
       </div>
   </header>
@@ -44,6 +17,22 @@
 <script>
 export default {
   name: 'HeaderDC',
+  data() {
+      return {
+          options: [
+              'characters',
+              'comics',
+              'movies',
+              'tv',
+              'games',
+              'collectibles',
+              'videos',
+              'fans',
+              'news',
+              'shop'
+          ]
+      }
+  }
 }
 </script>
 
@@ -66,6 +55,7 @@ export default {
 
 .navbar {
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     text-transform: uppercase;
 

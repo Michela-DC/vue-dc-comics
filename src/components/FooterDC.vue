@@ -5,100 +5,38 @@
             <div class="info-container">
                     <div class="col-1">
                         <div class="dc-comics">
-                            <h3>dc comics</h3>
+                            <h4>dc comics</h4>
                             <ul>
-                                <li>
-                                    <a href="">Charactres</a>
-                                </li>
-                                <li>
-                                    <a href="">Comics</a>
-                                </li>
-                                <li>
-                                    <a href="">Movies</a>
-                                </li>
-                                <li>
-                                    <a href="">TV</a>
-                                </li>
-                                <li>
-                                    <a href="">Games</a>
-                                </li>
-                                <li>
-                                    <a href="">Videos</a>
-                                </li>
-                                <li>
-                                    <a href="">News</a>
+                                <li v-for="(item, i) in dcComics" :key="i">
+                                    <a href="">{{item}}</a>
                                 </li>
                             </ul>
                         </div>
+
                         <div class="shop">
-                            <h3>Shop</h3>
+                            <h4>Shop</h4>
                             <ul>
-                                <li>
+                                <li v-for="(item, i) in shop" :key="i">
                                     <a href="">Shop DC</a>
-                                </li>
-                                <li>
-                                    <a href="">Shop DC Collectibles</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="col-1 dc">
-                        <h3>dc</h3>
+                        <h4>dc</h4>
                         <ul>
-                            <li>
-                                <a href="">Terms Of Use</a>
-                            </li>
-                            <li>
-                                <a href="">Provicy Ppolicy (New)</a>
-                            </li>
-                            <li>
-                                <a href="">Ad Choices</a>
-                            </li>
-                            <li>
-                                <a href="">Advertising</a>
-                            </li>
-                            <li>
-                                <a href="">Jobs</a>
-                            </li>
-                            <li>
-                                <a href="">Subscriptions</a>
-                            </li>
-                            <li>
-                                <a href="">Talent Workshops</a>
-                            </li>
-                            <li>
-                                <a href="">CPSC Certificates</a>
-                            </li>
-                            <li>
-                                <a href="">Ratings</a>
-                            </li>
-                            <li>
-                                <a href="">Shop Help</a>
-                            </li>
-                            <li>
-                                <a href="">Contact Us</a>
+                            <li v-for="(item, i) in dc" :key="i">
+                                <a href="">{{item}}</a>
                             </li>
                         </ul>
                     </div>
 
                     <div class="col-1 sites">
-                        <h3>sites</h3>
+                        <h4>sites</h4>
                         <ul>
-                            <li>
-                                <a href="">DC</a>
-                            </li>
-                            <li>
-                                <a href="">MAD Magazine</a>
-                            </li>
-                            <li>
-                                <a href="">DC Kids</a>
-                            </li>
-                            <li>
-                                <a href="">DC Universe</a>
-                            </li>
-                            <li>
-                                <a href="">DC Power Visa</a>
+                            <li v-for="(item, i) in sites" :key="i">
+                                <a href="">{{item}}</a>
                             </li>
                         </ul>
                     </div>
@@ -116,30 +54,11 @@
 
                     <div class="social-media">
                         <h3>Follow us</h3>
+
                         <ul class="social-wrapper">
-                            <li>
+                            <li v-for="(item, i) in icons" :key="i">
                                 <a href="">
-                                    <img src="../assets/img/footer-facebook.png" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="../assets/img/footer-twitter.png" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="../assets/img/footer-youtube.png" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="../assets/img/footer-pinterest.png" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="../assets/img/footer-periscope.png" alt="">
+                                    <img :src="item" alt="">
                                 </a>
                             </li>
                         </ul>
@@ -154,6 +73,54 @@
 <script>
 export default {
   name: 'FooterDC',
+  data () {
+      return {
+          dcComics: [
+            'Charactres',
+            'Comics',
+            'Movies',
+            'TV',
+            'Games',
+            'Videos',
+            'News'
+          ],
+
+          shop: [
+            'Shop DC',
+            'Shop DC Collectibles'
+          ],
+
+          dc: [
+            'Terms Of Use',
+            'Provicy Ppolicy (New)',
+            'Ad Choices',
+            'Advertising',
+            'Jobs',
+            'Subscriptions',
+            'Talent Workshops',
+            'CPSC Certificates',
+            'Ratings',
+            'Shop Help',
+            'Contact Us'
+          ],
+        
+        sites: [
+            'DC',
+            'MAD Magazine',
+            'DC Kids',
+            'DC Universe',
+            'DC Power Visa',
+        ],
+
+        icons: [
+           require ('../assets/img/footer-facebook.png'),
+            require ('../assets/img/footer-twitter.png'),
+            require ('../assets/img/footer-youtube.png'),
+            require ('../assets/img/footer-pinterest.png'),
+            require ('../assets/img/footer-periscope.png'),
+        ]
+      }
+  }
 }
 </script>
 
@@ -177,34 +144,36 @@ footer{
     width: 80%;
     margin: 0 auto;
     display: flex;
-    gap: 20px;
+    gap: 25px;
     height: 388px;
-    padding: 50px 0;
+    padding: 52px 0;
     position: relative;
     overflow: hidden;
 
     .col-1{
         position: relative;
         z-index: 10;
-    }
 
-    h3{
-        text-transform: uppercase;
-        color: white;
-    }
+        h4{
+            text-transform: uppercase;
+            color: white;
+            margin-bottom: 10px;
+        }
 
-    li{
-        line-height: 22px;
+        li{
+            line-height: 20px;
 
-        a{
-            color: #acacac;
-            font-size: 13px;
+            a{
+                color: #acacac;
+                font-size: 12px;
+            }
+        }
+
+        .dc-comics{
+            margin-bottom: 25px;
         }
     }
 
-    .dc-comics{
-        margin-bottom: 25px;
-    }
     
     .logo-bg{
         position: absolute;
@@ -249,12 +218,11 @@ footer{
                 a{
                     display: flex;
                     align-items: center;
-                }
 
-                img{
-                    height: 30px;
+                    img{
+                        height: 30px;
+                    }
                 }
-
             }
         }
     }

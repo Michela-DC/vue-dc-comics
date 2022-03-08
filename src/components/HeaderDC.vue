@@ -52,8 +52,10 @@ export default {
 .header-container{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 115px;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .logo-wrapper {

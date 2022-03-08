@@ -1,17 +1,23 @@
 <template>
   <div id="app">
     <HeaderDC/>
+    <ContentDCComics/>
+    <FooterDC/>
   </div>
 </template>
 
 <script>
 
 import HeaderDC from './components/HeaderDC.vue'
+import ContentDCComics from './components/ContentDCComics.vue'
+import FooterDC from './components/FooterDC.vue'
 
 export default {
   name: 'App',
   components: {
-    HeaderDC
+    HeaderDC,
+    ContentDCComics,
+    FooterDC
   }
 }
 </script>

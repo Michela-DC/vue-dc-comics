@@ -51,18 +51,17 @@ export default {
 }
 
 .menu-section {
-    background-color: #0282F9;
+    @include bg-blueDC;
+
 
     .menu{
         height: 115px;
-        display: flex;
-        align-items: center;
+        @include flex-alignCenter;
         justify-content: space-evenly;
         text-transform: uppercase;
 
         .options{
-            display: flex;
-            align-items: center;
+            @include flex-alignCenter;
             gap: 10px;
 
             img{

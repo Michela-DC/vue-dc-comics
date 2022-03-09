@@ -174,14 +174,12 @@ footer{
     height: 90px;
     background-color: #303030;
     flex-grow: 1;
-    display: flex;
-    align-items: center;
+    @include flex-alignCenter;
 
     .container{
         width: 80%;
         margin: 0 auto;
-        display: flex;
-        align-items: center;
+        @include flex-alignCenter;
         justify-content: space-between;
         
         button{
@@ -193,8 +191,7 @@ footer{
         }
 
         .social-media{
-            display: flex;
-            align-items: center;
+            @include flex-alignCenter;
             gap: 20px;
             color: #0282F9;
 
@@ -204,8 +201,7 @@ footer{
                 gap: 18px;
 
                 a{
-                    display: flex;
-                    align-items: center;
+                    @include flex-alignCenter;
 
                     img{
                         height: 30px;

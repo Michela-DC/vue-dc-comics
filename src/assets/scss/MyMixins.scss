@@ -2,3 +2,12 @@
     width: 80%;
     margin: 0 auto;
 }
+
+@mixin flex-alignCenter{
+    display: flex;
+    align-items: center;
+}
+
+@mixin bg-blueDC{
+    background-color: #0082F9;
+}

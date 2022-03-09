@@ -42,9 +42,8 @@ export default {
 
 .container {
     @include container;
+    @include flex-alignCenter;
     height: 115px;
-    display: flex;
-    align-items: center;
     justify-content: space-between;
 }
 
@@ -67,8 +66,7 @@ export default {
             color: black;  
             font-weight: bold; 
             height: 100%; 
-            display: flex;
-            align-items: center;
+            @include flex-alignCenter;
             position: relative;
 
         }
@@ -85,7 +83,7 @@ export default {
             height: 4px;
             width: 100%;
             bottom: 0;
-            background-color: #0082F9;
+            @include bg-blueDC;
         }
     }
 }

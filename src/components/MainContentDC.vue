@@ -4,9 +4,17 @@
 
         <div class="current-series">
             <div class="container">
-                <div class="card-container" v-for="(element, i) in comics" :key="i">
-                    <ComicsDC :image="comics[i].thumb" :seriesName="comics[i].series" :seriesType="comics[i].type" :seriesPrice="comics[i].price" />
-                </div> 
+                <div class="section-title">
+                    <h2>current series</h2>
+                </div>
+
+                <div class="comics-container">
+                    <div class="card-container" v-for="(element, i) in comics" :key="i">
+                        <ComicsDC :image="comics[i].thumb" :seriesName="comics[i].series" :seriesType="comics[i].type" :seriesPrice="comics[i].price" />
+                    </div> 
+                </div>
+                
+                <button class="load-more">load more</button>
             </div>
         </div>
     </section>
@@ -103,25 +111,41 @@
 </script>
 
 <style scoped lang="scss">
-    @import '../assets/scss/MyMixins.scss';
+@import '../assets/scss/MyMixins.scss';
 
-    .jumbotron{
-        height: 398px;
-        background-image: url('../assets/img/jumbotron.jpg');
-        background-position: top;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+.jumbotron{
+    height: 398px;
+    background-image: url('../assets/img/jumbotron.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-    .current-series{
-        background-color: #1C1C1C;
-        height: 667px;
+.current-series{
+    background-color: #1C1C1C;
 
-        .container {
-            @include container;
-            padding-top: 53px;
+    .container {
+        @include container;
+        display: flex;
+        flex-direction: column; 
+        position: relative;
+
+        .section-title{
+            text-transform: uppercase;
+            color: white;
+            height: 53px;
+            width: 244px;
+            text-align: center;
+            line-height: 53px;
+            position: absolute;
+            bottom: 96%;
+            @include bg-blueDC;
+        }
+
+        .comics-container{
             display: flex;
             flex-wrap: wrap;
+            padding-top: 53px;
             gap: 2%;
 
             .card-container{
@@ -130,6 +154,20 @@
                 margin-bottom: 30px;
             }
         }
+
+        .load-more{
+            width: 185px;
+            height: 35px;
+            align-self: center;
+            color: white;
+            border: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 25px;
+            @include bg-blueDC;
+        }
+
     }
+}
 
 </style>

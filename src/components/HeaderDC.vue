@@ -1,6 +1,6 @@
 <template>
   <header>
-      <div class="header-container">
+      <div class="container">
         <figure class="logo-wrapper">
             <img class="logo" src="../assets/img/dc-logo.png" alt="">
         </figure>
@@ -38,13 +38,14 @@ export default {
 
 <style scoped lang="scss">
 
-.header-container{
+@import '../assets/scss/MyMixins.scss';
+
+.container {
+    @include container;
+    height: 115px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 115px;
-    width: 80%;
-    margin: 0 auto;
 }
 
 .logo-wrapper {
@@ -58,10 +59,37 @@ export default {
     flex-wrap: wrap;
     gap: 30px;
     text-transform: uppercase;
+    height: 100%;
 
-    a{
-        color: black;  
-        font-weight: bold;  
+    li {
+
+        a{
+            color: black;  
+            font-weight: bold; 
+            height: 100%; 
+            display: flex;
+            align-items: center;
+            position: relative;
+
+        }
+
     }
+
+    li:nth-child(2) a{
+        color: #0082F9;
+
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            height: 4px;
+            width: 100%;
+            bottom: 0;
+            background-color: #0082F9;
+        }
+    }
+    
+    
+
 }
 </style>

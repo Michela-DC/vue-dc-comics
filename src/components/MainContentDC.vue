@@ -1,13 +1,15 @@
 <template>
     <main>
-        <div class="main-container">
-            <div class="content-container">
-                <div class="content">
+        <section class="comics-section">
+            <div class="container">
+                <div class="comics">
                     CONTENT
                 </div>
             </div>
+        </section>
 
-            <div class="menu-container">
+        <section class="menu-section">
+            <div class="container">
                 <ul class="menu">
                     <li class="options" v-for="(option, i) in options" :key="i">
                         <img :src="option.image" alt="">
@@ -15,13 +17,13 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </section>
     </main>
 </template>
 
 <script>
 export default {
-  name: 'ContentDCComics',
+  name: 'MainContentDC',
   data () {
       return {
           options: [ 
@@ -52,30 +54,35 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../assets/scss/MyMixins.scss';
 
-.main-container{
+main{
     color: white;
 }
 
-.content-container{
+.container {
+    @include container;
+}
+
+.comics-section{
     background-color: black;
 
-    .content{
+    .comics{
         height: 115px;
-        width: 80%;
-        margin: 0 auto;
+        // width: 80%;
+        // margin: 0 auto;
         display: flex;
         align-items: center;
     }
 }
 
-.menu-container {
+.menu-section {
     background-color: #0282F9;
 
     .menu{
         height: 115px;
-        width: 80%;
-        margin: 0 auto;
+        // width: 80%;
+        // margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: space-evenly;

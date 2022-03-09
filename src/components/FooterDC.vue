@@ -1,72 +1,67 @@
 <template>
     <footer>
-        <div class="footer-container">
-
-            <div class="info-container">
-                    <div class="col-1">
-                        <div class="dc-comics">
-                            <h4>dc comics</h4>
-                            <ul>
-                                <li v-for="(item, i) in dcComics" :key="i">
-                                    <a href="">{{item}}</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="shop">
-                            <h4>Shop</h4>
-                            <ul>
-                                <li v-for="(item, i) in shop" :key="i">
-                                    <a href="">Shop DC</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-1 dc">
-                        <h4>dc</h4>
+        <section class="info-section">
+            <div class="container">
+                <div class="col">
+                    <div class="dc-comics">
+                        <h4>dc comics</h4>
                         <ul>
-                            <li v-for="(item, i) in dc" :key="i">
+                            <li v-for="(item, i) in dcComics" :key="i">
                                 <a href="">{{item}}</a>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="col-1 sites">
-                        <h4>sites</h4>
+                    <div class="shop">
+                        <h4>Shop</h4>
                         <ul>
-                            <li v-for="(item, i) in sites" :key="i">
-                                <a href="">{{item}}</a>
+                            <li v-for="(item, i) in shop" :key="i">
+                                <a href="">Shop DC</a>
                             </li>
                         </ul>
                     </div>
+                </div>
 
-                <div class="logo-bg">
-                    <img src="../assets/img/dc-logo-bg.png" alt="">
+                <div class="col dc">
+                    <h4>dc</h4>
+                    <ul>
+                        <li v-for="(item, i) in dc" :key="i">
+                            <a href="">{{item}}</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col sites">
+                    <h4>sites</h4>
+                    <ul>
+                        <li v-for="(item, i) in sites" :key="i">
+                            <a href="">{{item}}</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </section>
 
-            <div class="signUp-container">
-                <div class="signUp-wrapper">
-                    <button>
-                        sign-up now!
-                    </button>
+        <section class="social-section">
+            <div class="container">
+                <button>
+                    sign-up now!
+                </button>
 
-                    <div class="social-media">
-                        <h3>Follow us</h3>
+                <div class="social-media">
+                    <h3>Follow us</h3>
 
-                        <ul class="social-wrapper">
-                            <li v-for="(item, i) in icons" :key="i">
-                                <a href="">
-                                    <img :src="item" alt="">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="social-wrapper">
+                        <li v-for="(item, i) in icons" :key="i">
+                            <a href="">
+                                <img :src="item" alt="">
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-            </div> <!-- fine signUp-container -->
+            </div>
+        </section> 
 
-        </div> <!-- fine footer container -->
     </footer>
 </template>
 
@@ -126,74 +121,67 @@ export default {
 
 <style scoped lang="scss">
 
+@import '../assets/scss/MyMixins.scss';
+
 footer{
     flex-grow: 1;
     background-image: url('../assets/img/footer-bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.footer-container{ 
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.info-container{
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    gap: 25px;
-    height: 388px;
-    padding: 52px 0;
-    position: relative;
-    overflow: hidden;
 
-    .col-1{
-        position: relative;
-        z-index: 10;
+.info-section{
+    
+    .container{
+        @include container;
+        background-image: url('../assets/img/dc-logo-bg.png');
+        background-position: right;
+        background-size: 45%;
+        background-repeat: no-repeat;
+        display: flex;
+        gap: 25px;
+        padding: 55px 0;
 
-        h4{
-            text-transform: uppercase;
-            color: white;
-            margin-bottom: 10px;
-        }
+        .col{
+            h4{
+                text-transform: uppercase;
+                color: white;
+                margin-bottom: 10px;
+            }
 
-        li{
-            line-height: 20px;
+            li{
+                line-height: 20px;
 
-            a{
-                color: #acacac;
-                font-size: 12px;
+                a{
+                    color: #acacac;
+                    font-size: 12px;
+                }
+            }
+
+            .dc-comics{
+                margin-bottom: 25px;
             }
         }
-
-        .dc-comics{
-            margin-bottom: 25px;
-        }
     }
 
-    
-    .logo-bg{
-        position: absolute;
-        top: -95px;
-        right: 0;
-    }
 }
 
-.signUp-container{
-    flex-grow: 1;
-    width: 100%;
+.social-section{ 
     background-color: #303030;
+    flex-grow: 1;
     display: flex;
     align-items: center;
 
-    .signUp-wrapper{
-        display: flex;
-        align-items: center;
+    .container{
         width: 80%;
         margin: 0 auto;
+        display: flex;
+        align-items: center;
         justify-content: space-between;
         
         button{
@@ -227,7 +215,4 @@ footer{
         }
     }
 }
-
-
-
 </style>

@@ -124,7 +124,6 @@ export default {
 @import '../assets/scss/MyMixins.scss';
 
 footer{
-    flex-grow: 1;
     background-image: url('../assets/img/footer-bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -172,6 +171,7 @@ footer{
 }
 
 .social-section{ 
+    height: 90px;
     background-color: #303030;
     flex-grow: 1;
     display: flex;

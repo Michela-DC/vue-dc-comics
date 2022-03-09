@@ -1,29 +1,76 @@
 <template>
     <div class="card-wrapper">
-        <figure class="series-cover">
-            <img src="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2018/09/AC1000_DLX_162-001_HD_5ba13723281ab0.37845353.jpg?itok=ZsI-C5eX" alt="">
+        <figure class="series-image">
+            <img :src="image" alt="">
         </figure>
-        <div class="series-name">
-            Action Comics
-        </div>
-        <div class="price">
-            dic
-        </div>
-        <div class="type">
-            comic book
+        <div class="series-info">
+            <div class="series-name">
+                {{seriesName}}
+            </div>
+            <div class="type">
+                {{seriesType}}
+            </div>
+            <div class="price">
+                {{seriesPrice}}
+            </div>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-    name: 'ComicsDC',
+        name: 'ComicsDC',
+        props: [
+            'image',
+            'seriesName',
+            'seriesPrice',
+            'seriesType'
+        ],
+
+        created() {
+            console.log(this.image, this.seriesName)
+        }
     }
 </script>
 
 <style scoped lang="scss">
-    .series-cover{
-        height: 185px; 
-        overflow: hidden;
+
+.card-wrapper{
+    color: white;
+    font-size: 14px;
+}
+
+.series-image{
+    color: white;
+    overflow: hidden;
+    height: 169px; 
+    margin-bottom: 10px;
+    
+    img{
+        width: 100%;
     }
+}
+
+.series-info{
+    
+    .series-name, .type, .price{
+        margin-bottom: 7px;
+    }
+
+    .series-name{
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    
+    .type{
+        color: #acacac;
+    }
+    
+    .price{
+        color: #55BA59;
+    }
+}
+
+
+
 </style>

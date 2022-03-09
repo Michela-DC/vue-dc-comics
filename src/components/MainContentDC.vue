@@ -4,8 +4,8 @@
 
         <div class="current-series">
             <div class="container">
-                <div class="row">
-                    <ComicsDC/>
+                <div class="card-container" v-for="(element, i) in comics" :key="i">
+                    <ComicsDC :image="comics[i].thumb" :seriesName="comics[i].series" :seriesType="comics[i].type" :seriesPrice="comics[i].price" />
                 </div> 
             </div>
         </div>
@@ -115,14 +115,19 @@
 
     .current-series{
         background-color: #1C1C1C;
-        padding-top: 53px;
+        height: 667px;
 
         .container {
             @include container;
-            height: 667px;
+            padding-top: 53px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2%;
 
-            .row{
-                color: white;
+            .card-container{
+                height: fit-content;
+                width: calc(90% / 6);
+                margin-bottom: 30px;
             }
         }
     }

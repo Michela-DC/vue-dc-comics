@@ -1,17 +1,23 @@
 <template>
     <div class="card-wrapper">
         <figure class="series-image">
-            <img :src="image" alt="">
+            <!-- usando le proprietà singolarmente: -->
+            <!-- <img :src="image" alt=""> -->
+            <!-- oppure usando la proprietà in cui è stato passato tutto l'oggeto del padre: -->
+            <img :src="comicsInfo.thumb" alt="">
         </figure>
         <div class="series-info">
             <div class="series-name">
-                {{seriesName}}
+                <!-- {{seriesName}} -->
+                {{comicsInfo.series}}
             </div>
             <div class="type">
-                {{seriesType}}
+                <!-- {{seriesType}} -->
+                {{comicsInfo.type}}
             </div>
             <div class="price">
-                {{seriesPrice}}
+                <!-- {{seriesPrice}} -->
+                {{comicsInfo.price}}
             </div>
         </div>
     </div>
@@ -21,14 +27,20 @@
     export default {
         name: 'ComicsDC',
         props: [
-            'image',
-            'seriesName',
-            'seriesPrice',
-            'seriesType'
+            'comicsInfo'
+            // 'image',
+            // 'seriesName',
+            // 'seriesPrice',
+            // 'seriesType',
         ],
+        // potrei anche specificare il tipo di elemento:
+        // props: {
+        //     comicsInfo: Object,
+        // },
 
         created() {
-            console.log(this.image, this.seriesName)
+            // console.log(this.image, this.seriesName);
+            console.log(this.comicsInfo);
         }
     }
 </script>

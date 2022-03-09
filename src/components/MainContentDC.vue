@@ -10,7 +10,10 @@
 
                 <div class="comics-container">
                     <div class="card-container" v-for="(element, i) in comics" :key="i">
-                        <ComicsDC :image="comics[i].thumb" :seriesName="comics[i].series" :seriesType="comics[i].type" :seriesPrice="comics[i].price" />
+                        <!-- Posso passare le proprietà singolarmente -->
+                        <!-- <ComicsDC :image="comics[i].thumb" :seriesName="comics[i].series" :seriesType="comics[i].type" :seriesPrice="comics[i].price"/> -->
+                        <!-- oppure posso passare direttamente tutto l'oggetto:-->
+                        <ComicsDC :comicsInfo="element"/>
                     </div> 
                 </div>
                 

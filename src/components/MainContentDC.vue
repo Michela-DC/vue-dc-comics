@@ -114,6 +114,8 @@
 </script>
 
 <style scoped lang="scss">
+
+@import '../assets/scss/MyVariables.scss';
 @import '../assets/scss/MyMixins.scss';
 
 .jumbotron{
@@ -142,7 +144,7 @@
             line-height: 53px;
             position: absolute;
             bottom: 96%;
-            @include bg-blueDC;
+            background-color: $blue;
         }
 
         .comics-container{
@@ -167,7 +169,7 @@
             text-transform: uppercase;
             font-weight: bold;
             margin-bottom: 25px;
-            @include bg-blueDC;
+            background-color: $blue;
         }
 
     }

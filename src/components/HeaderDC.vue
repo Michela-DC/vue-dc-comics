@@ -38,6 +38,7 @@ export default {
 
 <style scoped lang="scss">
 
+@import '../assets/scss/MyVariables.scss';
 @import '../assets/scss/MyMixins.scss';
 
 .container {
@@ -74,7 +75,7 @@ export default {
     }
 
     li:nth-child(2) a{
-        color: #0082F9;
+        color: $blue;
 
         &::after{
             content: '';
@@ -83,7 +84,7 @@ export default {
             height: 4px;
             width: 100%;
             bottom: 0;
-            @include bg-blueDC;
+            background-color: $blue;
         }
     }
 }

@@ -121,6 +121,7 @@ export default {
 
 <style scoped lang="scss">
 
+@import '../assets/scss/MyVariables.scss';
 @import '../assets/scss/MyMixins.scss';
 
 footer{
@@ -184,7 +185,7 @@ footer{
         
         button{
             background-color: transparent;
-            border: 2px solid #0282F9;
+            border: 2px solid $blue;
             color: white;
             padding: 12px;
             text-transform: uppercase;
@@ -193,7 +194,7 @@ footer{
         .social-media{
             @include flex-alignCenter;
             gap: 20px;
-            color: #0282F9;
+            color: $blue;
 
             .social-wrapper{
                 display: flex;

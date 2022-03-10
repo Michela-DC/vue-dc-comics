@@ -60,6 +60,12 @@
     
     img{
         width: 100%;
+        // potevo anche usare object-fit e object-position, togliendo overflow e height da series-image:
+        // width: 100%;
+        // display: block;
+        // aspect-ratio: 1/1;
+        // object-fit: cover;
+        // object-position: center;
     }
 }
 

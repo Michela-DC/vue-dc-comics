@@ -44,6 +44,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+@import '../assets/scss/MyVariables.scss';
 @import '../assets/scss/MyMixins.scss';
 
 .container {
@@ -51,7 +53,7 @@ export default {
 }
 
 .menu-section {
-    @include bg-blueDC;
+    background-color: $blue;
 
 
     .menu{
